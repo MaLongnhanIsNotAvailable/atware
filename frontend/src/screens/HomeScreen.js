@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import Demo from './Scheduler.js';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -20,13 +21,14 @@ export default function HomeScreen() {
     error: errorSellers,
     users: sellers,
   } = userTopSellersList;
-
+  const testa = new Demo();
   useEffect(() => {
     dispatch(listProducts({}));
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
     <div>
+      {testa.render()}
       {/* <h2>Welcome</h2> */}
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
@@ -44,7 +46,8 @@ export default function HomeScreen() {
                 </Link>
               </div>
             ))}
-          </Carousel> */}
+      
+      </Carousel> */}
         </>
       )}
       {/* <h2>Featured Products</h2> */}
