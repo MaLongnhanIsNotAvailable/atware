@@ -27,7 +27,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <h2>Welcome</h2>
+      {/* <h2>Welcome</h2> */}
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
       ) : errorSellers ? (
@@ -35,7 +35,7 @@ export default function HomeScreen() {
       ) : (
         <>
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-          <Carousel showArrows autoPlay showThumbs={false}>
+          {/* <Carousel showArrows autoPlay showThumbs={false}>
             {sellers.map((seller) => (
               <div key={seller._id}>
                 <Link to={`/seller/${seller._id}`}>
@@ -44,10 +44,10 @@ export default function HomeScreen() {
                 </Link>
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
         </>
       )}
-      <h2>Featured Products</h2>
+      {/* <h2>Featured Products</h2> */}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -55,11 +55,12 @@ export default function HomeScreen() {
       ) : (
         <>
           {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-          <div className="row center">
+
+          {/* <div className="row center">
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>
             ))}
-          </div>
+          </div> */}
         </>
       )}
     </div>

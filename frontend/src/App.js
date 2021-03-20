@@ -40,12 +40,12 @@ function App() {
     dispatch(signout());
   };
 
-  const productCategoryList = useSelector((state) => state.productCategoryList);
-  const {
-    loading: loadingCategories,
-    error: errorCategories,
-    categories,
-  } = productCategoryList;
+  // const productCategoryList = useSelector((state) => state.productCategoryList);
+  // const {
+  //   loading: loadingCategories,
+  //   error: errorCategories,
+  //   categories,
+  // } = productCategoryList;
   useEffect(() => {
     dispatch(listProductCategories());
   }, [dispatch]);
@@ -101,7 +101,7 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
-            {userInfo && userInfo.isSeller && (
+            {/* {userInfo && userInfo.isSeller && (
               <div className="dropdown">
                 <Link to="#admin">
                   Seller <i className="fa fa-caret-down"></i>
@@ -115,7 +115,7 @@ function App() {
                   </li>
                 </ul>
               </div>
-            )}
+            )} */}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -139,7 +139,7 @@ function App() {
             )}
           </div>
         </header>
-        <aside className={sidebarIsOpen ? 'open' : ''}>
+        {/* <aside className={sidebarIsOpen ? 'open' : ''}>
           <ul className="categories">
             <li>
               <strong>Categories</strong>
@@ -164,15 +164,16 @@ function App() {
                   >
                     {c}
                   </Link>
+                   +/
                 </li>
               ))
             )}
           </ul>
-        </aside>
+        </aside> */}
         <main>
           <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
-          <Route path="/product/:id" component={ProductScreen} exact></Route>
+          {/* <Route path="/product/:id" component={ProductScreen} exact></Route> */}
           <Route
             path="/product/:id/edit"
             component={ProductEditScreen}
