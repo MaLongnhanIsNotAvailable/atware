@@ -15,7 +15,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <Demo />
+      
     </div>
   );
 }

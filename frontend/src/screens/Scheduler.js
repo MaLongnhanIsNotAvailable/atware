@@ -44,10 +44,11 @@ const EditingOptionsSelector = ({
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography className={classes.text}>
+        KET NOI HOC TAP
+      {/* <Typography className={classes.text}>
         Enabled Options
-      </Typography>
-      <FormGroup row>
+      </Typography> */}
+      {/* <FormGroup row>
         {editingOptionsList.map(({ id, text }) => (
           <FormControlLabel
             control={(
@@ -64,7 +65,7 @@ const EditingOptionsSelector = ({
             disabled={(id === 'allowDragging' || id === 'allowResizing') && !options.allowUpdating}
           />
         ))}
-      </FormGroup>
+      </FormGroup> */}
     </div>
   );
 };
@@ -163,10 +164,13 @@ export default () => {
             timeTableCellComponent={TimeTableCell}
           />
 
-          <Appointments />
+          <Appointments onDoubleClick={(e)=>{
+              console.log(`helloooooooooo`);
+          }}/>
 
           <AppointmentTooltip
             showOpenButton
+    
             showDeleteButton={allowDeleting}
           />
           <AppointmentForm
