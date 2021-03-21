@@ -2,8 +2,11 @@ import mongoose from 'mongoose';
 
 const timeSchema = new mongoose.Schema(
     {
-        username: { type: String, required: true },
-             
+
+        title: String,
+        startDate: String,
+        endDate: String,
+        more: String
     },
     {
         timestamps: true,

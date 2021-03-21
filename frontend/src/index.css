@@ -29,10 +29,10 @@ header {
   grid-area: header;
   background-color: #203040;
 }
-main {
+/* main {
   grid-area: main;
   padding: 1rem;
-}
+} */
 footer {
   grid-area: footer;
   background-color: #203040;
@@ -40,7 +40,7 @@ footer {
 }
 /* Common */
 h1 {
-  font-size: 1.8rem;
+  font-size: 3.5rem;
   padding: 1rem 0;
 }
 h2 {
@@ -67,12 +67,13 @@ select,
 textarea,
 button {
   padding: 1rem;
-  border-radius: 0.5rem;
-  border: 0.1rem #a4a4a4 solid;
+  border-radius: 5rem;
+  border: 0.01rem #a4a4a4 solid;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  opacity: 80%;
 }
 button {
   background-color: #f8f8f8;
@@ -86,6 +87,8 @@ button:hover {
 }
 button.primary {
   background-color: #f0c040;
+  opacity: 80%;
+  color: antiquewhite;
 }
 button.block {
   width: 100%;
@@ -97,6 +100,7 @@ button.small {
 header a {
   color: #ffffff;
   padding: 1rem;
+  margin-right: 10rem;
 }
 a.brand {
   color: #ffffff;
