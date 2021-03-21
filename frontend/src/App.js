@@ -6,15 +6,14 @@ import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
 import HomeScreen from './screens/HomeScreen';
 import ProductListScreen from './screens/ProductListScreen';
-import ProductScreen from './screens/ProductScreen';
+
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import SigninScreen from './screens/SigninScreen';
 import UserListScreen from './screens/UserListScreen';
 import SearchBox from './components/SearchBox';
 import { listProductCategories } from './actions/productActions';
-import LoadingBox from './components/LoadingBox';
-import MessageBox from './components/MessageBox'; 
+import StickyHeadTable from './screens/dataTable';
 
 function App() {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -51,6 +50,7 @@ function App() {
               )}
             ></Route>
           </div>
+          <Link to="/table">Match</Link>
           <div>
             {userInfo ? (
               <div className="dropdown">
@@ -65,11 +65,14 @@ function App() {
                     <Link to="#signout" onClick={signoutHandler}>
                       Sign Out
                     </Link>
+                    
                   </li>
                 </ul>
               </div>
             ) : (
+              
               <Link to="/signin">Sign In</Link>
+
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
@@ -90,10 +93,11 @@ function App() {
               </div>
             )}
           </div>
-        </header>
-        
+        </header>        
         <main>
           <Route path="/signin" component={SigninScreen}></Route>
+          
+          <Route path="/table" component={StickyHeadTable}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <PrivateRoute
             path="/profile"
@@ -107,7 +111,6 @@ function App() {
           <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center">All right reserved</footer>
       </div>
     </BrowserRouter>
   );
