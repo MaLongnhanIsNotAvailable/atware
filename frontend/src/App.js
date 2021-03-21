@@ -16,7 +16,7 @@ import SearchBox from './components/SearchBox';
 import { listProductCategories } from './actions/productActions';
 import StickyHeadTable from './screens/dataTable';
 import Calendar from './screens/Calendar';
-
+import Community from './screens/Community'
 function App() {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const userSignin = useSelector((state) => state.userSignin);
@@ -52,7 +52,8 @@ function App() {
               )}
             ></Route>
           </div>
-          <Link to="/table">Match</Link>
+          {/* <Link to="/table">Match</Link> */}
+          <Link to="/community"> Community</Link>
           <div>
             {userInfo ? (
               <div className="dropdown">
@@ -98,7 +99,7 @@ function App() {
         </header>        
         <main>
           <Route path="/signin" component={SigninScreen}></Route>
-          
+          <Route path="/community" component={Community}></Route>
           
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/test" component={UserMatchScreen}></Route>
