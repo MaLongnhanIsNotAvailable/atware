@@ -147,3 +147,16 @@ export const userAddressMapReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export const userListMatchReducer = (state = { users: [] }, action) => {
+  switch (action.type) {
+    case "request":
+      return { loading: true };
+    case "success":
+      return { loading: false, users: action.payload };
+    case "fail":
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};

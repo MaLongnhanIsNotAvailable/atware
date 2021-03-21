@@ -11,6 +11,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import SigninScreen from './screens/SigninScreen';
 import UserListScreen from './screens/UserListScreen';
+import UserMatchScreen from './screens/UserMatchScreen';
 import SearchBox from './components/SearchBox';
 import { listProductCategories } from './actions/productActions';
 import LoadingBox from './components/LoadingBox';
@@ -95,6 +96,7 @@ function App() {
         <main>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
+          <Route path="/test" component={UserMatchScreen}></Route>
           <PrivateRoute
             path="/profile"
             component={ProfileScreen}

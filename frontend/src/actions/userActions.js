@@ -179,3 +179,17 @@ export const listTopSellers = () => async (dispatch) => {
     dispatch({ type: USER_TOPSELLERS_LIST_FAIL, payload: message });
   }
 };
+
+export const userMatch = (username) => async (dispatch) => {
+  dispatch({ type: "request" });
+  try {
+    const { data } = await Axios.get(`/api/users?username=${username}`);
+    dispatch({ type: "success", payload: data });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: "fail", payload: message });
+  }
+};

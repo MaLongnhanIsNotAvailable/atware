@@ -68,6 +68,20 @@ userRouter.post(
 );
 
 userRouter.get(
+  '/:username',
+  expressAsyncHandler(async (req, res) => {
+    var query = {}
+    query[username] = req.params.username;
+    const user = await User.find();
+    if (user) {
+      res.send(user);
+    } else {
+      res.status(404).send({ message: 'User Not Found' });
+    }
+  })
+);
+
+userRouter.get(
   '/:id',
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
@@ -78,6 +92,8 @@ userRouter.get(
     }
   })
 );
+
+
 userRouter.put(
   '/profile',
   isAuth,
@@ -110,8 +126,6 @@ userRouter.put(
 
 userRouter.get(
   '/',
-  isAuth,
-  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const users = await User.find({});
     res.send(users);
@@ -120,8 +134,6 @@ userRouter.get(
 
 userRouter.delete(
   '/:id',
-  isAuth,
-  isAdmin,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
