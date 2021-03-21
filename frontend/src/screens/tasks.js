@@ -239,6 +239,7 @@ export const owners = [
   }, {
     text: 'Arthur Miller',
     id: 6,
-    color: '#FFA726',
+    color: 'transparent ',
   },
+  
 ];
