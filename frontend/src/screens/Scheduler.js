@@ -1,5 +1,12 @@
 import * as React from 'react';
 import Paper from '@material-ui/core/Paper';
+<<<<<<< HEAD
+=======
+import FormGroup from '@material-ui/core/FormGroup';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Typography from '@material-ui/core/FormControl';
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
 import { makeStyles } from '@material-ui/core/styles';
 import { ViewState, EditingState, IntegratedEditing } from '@devexpress/dx-react-scheduler';
 import {
@@ -11,7 +18,11 @@ import {
   DragDropProvider,
 } from '@devexpress/dx-react-scheduler-material-ui';
 
+<<<<<<< HEAD
 import { appointments } from './appointment';
+=======
+import { appointments } from './appointments';
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -40,10 +51,17 @@ const EditingOptionsSelector = ({
   const classes = useStyles();
   return (
     <div className={classes.container}>
+<<<<<<< HEAD
       {/* <Typography className={classes.text}>
         Enabled Options
       </Typography> */}
       {/* <FormGroup row>
+=======
+      <Typography className={classes.text}>
+        Enabled Options
+      </Typography>
+      <FormGroup row>
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
         {editingOptionsList.map(({ id, text }) => (
           <FormControlLabel
             control={(
@@ -60,7 +78,11 @@ const EditingOptionsSelector = ({
             disabled={(id === 'allowDragging' || id === 'allowResizing') && !options.allowUpdating}
           />
         ))}
+<<<<<<< HEAD
       </FormGroup> */}
+=======
+      </FormGroup>
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
     </div>
   );
 };
@@ -80,22 +102,35 @@ export default () => {
   const {
     allowAdding, allowDeleting, allowUpdating, allowResizing, allowDragging,
   } = editingOptions;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
   const onCommitChanges = React.useCallback(({ added, changed, deleted }) => {
     if (added) {
       const startingAddedId = data.length > 0 ? data[data.length - 1].id + 1 : 0;
       setData([...data, { id: startingAddedId, ...added }]);
+<<<<<<< HEAD
       
       console.log(data);
+=======
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
     }
     if (changed) {
       setData(data.map(appointment => (
         changed[appointment.id] ? { ...appointment, ...changed[appointment.id] } : appointment)));
+<<<<<<< HEAD
         console.log(data);
     }
     if (deleted !== undefined) {
       setData(data.filter(appointment => appointment.id !== deleted));
       
+=======
+    }
+    if (deleted !== undefined) {
+      setData(data.filter(appointment => appointment.id !== deleted));
+>>>>>>> a0cb6d2b536c666b9bce113319bf81f4bf904d73
     }
     setIsAppointmentBeingCreated(false);
   }, [setData, setIsAppointmentBeingCreated, data]);
