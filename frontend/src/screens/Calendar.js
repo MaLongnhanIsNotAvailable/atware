@@ -40,7 +40,7 @@ class Calendar extends Component {
 
       onEventClick: args => {
         let dp = this.calendar;
-       window.location.href ="http://localhost:3000/match";
+       window.location.href ="/match";
         // DayPilot.Modal.prompt("List user nhaaaaaaa:", args.e.text()).then(function(modal) {
         //   if (!modal.result) { return; }
         //   args.e.data.text = modal.result;
@@ -59,9 +59,16 @@ class Calendar extends Component {
         {
           id: 1,
           text: "Giai tich",
-          start: "2021-09-13T10:30:00",
-          end: "2021-09-13T11:00:00"
+          start: "2021-09-13T15:30:00",
+          end: "2021-09-13T16:00:00"
         },
+        {
+          id: 1,
+          text: "Giai tich",
+          start: "2021-09-13T07:30:00",
+          end: "2021-09-13T08:00:00"
+        },
+        
         {
           id: 2,
           text: "Toan",

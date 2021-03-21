@@ -98,7 +98,7 @@ function App() {
         <main>
           <Route path="/signin" component={SigninScreen}></Route>
           
-          <Route path="/table" component={StickyHeadTable}></Route>
+          
           <Route path="/register" component={RegisterScreen}></Route>
           <PrivateRoute
             path="/profile"
@@ -111,6 +111,7 @@ function App() {
           ></AdminRoute>
           <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
           <Route path="/" component={Calendar} exact></Route>
+          <Route path="/match" component={StickyHeadTable} exact></Route>
         </main>
       </div>
     </BrowserRouter>
